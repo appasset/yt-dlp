@@ -2,14 +2,14 @@ all: lazy-extractors yt-dlp doc pypi-files
 clean: clean-test clean-dist
 clean-all: clean clean-cache
 completions: completion-bash completion-fish completion-zsh
-doc: README.md CONTRIBUTING.md issuetemplates supportedsites
+doc: README.md issuetemplates supportedsites
 ot: offlinetest
 tar: yt-dlp.tar.gz
 
 # Keep this list in sync with pyproject.toml includes/artifacts
 # intended use: when building a source distribution,
 # make pypi-files && python3 -m build -sn .
-pypi-files: AUTHORS Changelog.md LICENSE README.md README.txt supportedsites \
+pypi-files: AUTHORS README.md README.txt supportedsites \
 	        completions yt-dlp.1 pyproject.toml setup.cfg devscripts/* test/*
 
 .PHONY: all clean install test tar pypi-files completions ot offlinetest codetest supportedsites
@@ -142,8 +142,7 @@ yt_dlp/extractor/lazy_extractors.py: devscripts/make_lazy_extractors.py devscrip
 
 yt-dlp.tar.gz: all
 	@$(GNUTAR) -czf yt-dlp.tar.gz --transform "s|^|yt-dlp/|" --owner 0 --group 0 \
-		--exclude '*.DS_Store' \
-		--exclude '*.kate-swp' \
+		--exclude '*.DS_Store' \		--exclude '*.kate-swp' \
 		--exclude '*.pyc' \
 		--exclude '*.pyo' \
 		--exclude '*~' \
