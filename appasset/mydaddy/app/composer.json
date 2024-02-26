@@ -1,0 +1,13 @@
+{
+    "name": "appasset/mydaddy-test",
+    "authors": [
+        {
+            "name": "Александр Трофимов",
+            "email": "trofimoff@live.ru"
+        }
+    ],
+    "require": {
+        "php-curl-class/php-curl-class": "^9.5",
+        "colinodell/json5": "^2.2"
+    }
+}

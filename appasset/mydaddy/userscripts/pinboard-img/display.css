@@ -1,0 +1,23 @@
+/**
+ * @link https://pastebin.com/raw/Lrr8D4Ri
+ */
+#content,
+#main_column,
+#bookmarks {
+	display: block;
+    position: relative;
+}
+
+.poster-wrapper,
+.poster-wrapper img {
+	  position: relative;
+    display: block;
+}
+
+.poster-wrapper {
+	width: 100%;
+}
+
+.poster-wrapper img{
+    max-width: 100%;
+}

@@ -1,0 +1,16 @@
+{
+    "name": "appasset/nplayer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Appasset\\Nplayer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Александр Трофимов",
+            "email": "trofimoff@live.ru"
+        }
+    ],
+    "require": {}
+}

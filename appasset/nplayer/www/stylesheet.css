@@ -1,0 +1,50 @@
+body {
+  background: #ffffff;
+  color: #000000;
+}
+
+.content {
+  margin: 50px auto;
+  padding: 0;
+}
+
+ul.links {
+  display: block;
+  position: relative;
+  margin:  0;
+  padding: 0;
+}
+
+ul.links li {
+  margin: 0;
+  padding: 10px;
+  display: block;
+  /*float: left;*/
+  list-style-type: none;
+  font-size: 1.15em;
+}
+
+ul.links li a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul.links li.active {
+  color: #fff;
+  list-style-type: circle;
+  font-size: 1.15em;
+}
+
+ul.links li.active a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.debug-console {
+  display: none;
+}
+
+.debug-console pre {
+  display: block;
+  width: 100%;
+}

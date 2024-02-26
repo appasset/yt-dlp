@@ -1,0 +1,12 @@
+{
+  "app": {
+    "home": "http://192.168.1.134",
+    "prefix": "/nplayer"
+  },
+  "parser": {
+    "links":[
+      { "poster": "https://i.imgur.com/qx2TR9d.jpg",
+        "link": "https://mydaddy.cc/video/d2a83dc418ee9d62ca/&alt" }
+    ]
+  }
+}
