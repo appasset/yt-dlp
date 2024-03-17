@@ -57,6 +57,51 @@ function __init(){
   loadConfig();
 }
 
+function checkLinksHeaderLine($curl, $header_line) {
+    echo "<br>YEAH: ".$header_line;
+    return strlen($header_line);
+}
+
+function check($link){
+  $result = true;
+  $info = checkLinks($link)[0];
+  var_dump($info);
+  
+  return $result;
+}
+
+function checkLinks($links){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_HEADER, true);
+  curl_setopt($ch, CURLOPT_FILETIME, true);
+  curl_setopt($ch, CURLOPT_NOBODY, true);
+  // curl_setopt($ch, CURLOPT_HEADERFUNCTION, "checkLinksHeaderLine");
+  
+  if (!is_array($links)) {
+    $tmp = [];
+    array_push($tmp, $links);
+    $links = (array) $tmp;
+    unset($tmp);
+  }
+  
+  $result = [];
+  foreach ($links as $entry) {
+    $info = (object) array(
+      "link"   => $entry,
+      "code"   => null,
+      "header" => null,
+      "info"   => null
+    );
+    curl_setopt($ch, CURLOPT_URL, $entry);
+    $info->header = curl_exec($ch);
+    $info->info = curl_getinfo($body);
+    
+    $result[] = $info;
+  }
+  
+  return $result;
+}
+
 function loadConfig(){
   global $CFG, $App;
   $data = (array) json_decode(file_get_contents($App->Path.'/config.json'));
